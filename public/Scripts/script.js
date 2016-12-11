@@ -10,24 +10,12 @@ $(function() {
       //console.log(data);
       paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition, data.ballYPosition);
     });
-  },10)
+  },50)
 });
 
 function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Var är kanterna?
-  ctx.beginPath();
-    ctx.arc(canvas.width, canvas.height, 10, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
-    // var är kanterna
-    ctx.beginPath();
-      ctx.arc(0, 0, 10, 0, Math.PI*2);
-      ctx.fillStyle = "#0095DD";
-      ctx.fill();
-      ctx.closePath();
 
 
   ctx.beginPath();
@@ -37,8 +25,8 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
   ctx.closePath();
 
   ctx.beginPath();
-  ctx.rect(100, yPos2, 50, 100);
-  ctx.fillStyle = "#000000";
+  ctx.rect(canvas.width - 30, yPos2, 20, 50);
+  ctx.fillStyle = "#09fa45";
   ctx.fill();
   ctx.closePath();
 
