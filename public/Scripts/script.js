@@ -5,7 +5,7 @@ $(function() {
   var ctx = canvas.getContext("2d");
   //setInterval(updateData(ctx), 1000);
   setInterval(function(){
-    $.getJSON("http://localhost:5000/api?gameID=123", function(data){
+    $.getJSON("https://pongmultiplaye.herokuapp.com/api?gameID=123", function(data){
       //console.log("HEJ");
       //console.log(data);
       paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition, data.ballYPosition);
@@ -55,7 +55,7 @@ $(document).keydown(function(e) {
     }else{
       player2Input = e.keyCode;
     }
-    $.post("http://localhost:5000/api",
+    $.post("https://pongmultiplaye.herokuapp.com/api",
     {player1Input:player1Input,player2Input:player2Input},
     function(data, textStatus, jqXHR)
     {
