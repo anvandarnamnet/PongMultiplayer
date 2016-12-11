@@ -1,12 +1,15 @@
-var game = {"player1Position": 100, "player2Position": 100};
+var game = {"player1Position": 100, "player2Position": 100, "ballXPosition": 50, "ballYPosition": 100};
 var exports = module.exports;
+const ballUpdatems = 100;
+const ballXSpeed = 5;
+const ballYSpeed = 5;
 const moveSpeed = 10;
 
 exports.getGameState = function() {
     return game;
 }
 
-exports.updateGame = function(player1Input, player2Input) {
+exports.updatePlayers = function(player1Input, player2Input) {
     if (player1Input == 40) {
         game.player1Position += moveSpeed;
     }
@@ -20,3 +23,7 @@ exports.updateGame = function(player1Input, player2Input) {
         game.player2Position -= moveSpeed;
     }
 }
+
+setInterval(function() {
+     game.ballXPosition += ballXSpeed;
+}, ballUpdatems);

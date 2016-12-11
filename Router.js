@@ -14,7 +14,9 @@ router.get("/", function (request, response)  {
 router.post("/", function (request, response) {
     var player1Input = request.body.player1Input;
     var player2Input = request.body.player2Input;
-    gameHandler.updateGame(player1Input, player2Input);
+
+    gameHandler.updatePlayers(player1Input, player2Input);
+
     response.send("200");
 });
 

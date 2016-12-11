@@ -7,16 +7,15 @@ $(function() {
   setInterval(function(){
     $.getJSON("http://localhost:5000/api?gameID=123", function(data){
       //console.log("HEJ");
-      paintPlayers(ctx,canvas, data.player1Position, data.player2Position);
+      //console.log(data);
+      paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition);
     });
   },100)
 });
 
-function paintPlayers(ctx,canvas, yPos1, yPos2){
+function paintPlayers(ctx,canvas, yPos1, yPos2, ballX){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // the first player:
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   ctx.beginPath();
   ctx.rect(10, yPos1, 50, 100);
@@ -31,6 +30,12 @@ function paintPlayers(ctx,canvas, yPos1, yPos2){
   ctx.closePath();
 
 
+  ctx.beginPath();
+  ctx.rect(ballX, 50, 50, 100);
+  ctx.fillStyle = "#bb6969";
+  ctx.fill();
+  ctx.closePath();
+  console.log(ballX);
 
 
 }
@@ -45,7 +50,7 @@ $(document).keydown(function(e) {
     function(data, textStatus, jqXHR)
     {
           //data: Received from server
-          console.log(data);
+          //console.log(data);
     })
 });
 
