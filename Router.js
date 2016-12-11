@@ -10,4 +10,12 @@ router.get("/", function (request, response)  {
 });
 
 
+router.post("/", function (request, response) {
+    var player1Input = request.body.player1Input;
+    var player1Input = request.body.player2Input;
+    console.log(player1Input);
+    console.log(player2Input);
+    response.send("200");
+});
+
 module.exports = router;
