@@ -44,4 +44,10 @@ setInterval(function() {
     if (game.ballYPosition <= wallDown) {
         ballYSpeed = -ballYSpeed;
     }
+    if (game.ballXPosition <= 30 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25)) {
+        ballXSpeed = -ballXSpeed;
+    }
+    if (game.ballXPosition >= 370 && (game.ballYPosition >= game.player2Position - 25 && game.ballYPosition <= game.player2Position + 25)) {
+        ballXSpeed = -ballXSpeed;
+    }
 }, ballUpdateMs);
