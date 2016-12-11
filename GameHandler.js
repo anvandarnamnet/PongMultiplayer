@@ -15,17 +15,29 @@ exports.getGameState = function() {
 }
 
 exports.updatePlayers = function(player1Input, player2Input) {
-    if (player1Input == 40) {
+    if (player1Input == 40 && game.player1Position <= 250) {
         game.player1Position += moveSpeed;
     }
-    if (player1Input == 38) {
+    else if (player1Input == 40) {
+        game.player1Position = 250;
+    }
+    if (player1Input == 38 && game.player1Position >= 0) {
         game.player1Position -= moveSpeed;
     }
-    if (player2Input == 40) {
+    else if (player1Input == 38) {
+        game.player1Position = 0;
+    }
+    if (player2Input == 40 && game.player2Position <= 250) {
         game.player2Position += moveSpeed;
     }
-    if (player2Input == 38) {
+    else if (player2Input == 40) {
+        game.player2Position = 250;
+    }
+    if (player2Input == 38 && game.player2Position >= 0) {
         game.player2Position -= moveSpeed;
+    }
+    else if (player2Input == 38) {
+        game.player2Position = 0;
     }
 }
 
