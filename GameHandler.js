@@ -1,7 +1,7 @@
 var game = {"player1Position": 100, "player2Position": 100, "ballXPosition": 50, "ballYPosition": 100};
 var exports = module.exports;
 const ballUpdateMs = 10;
-const moveSpeed = 5;
+const moveSpeed = 20;
 const wallRight = 390;
 const wallLeft = 10;
 const wallUp = 290;
@@ -44,10 +44,10 @@ setInterval(function() {
     if (game.ballYPosition <= wallDown) {
         ballYSpeed = -ballYSpeed;
     }
-    if (game.ballXPosition <= 30 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25)) {
+    if (game.ballXPosition <= 40 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25)) {
         ballXSpeed = -ballXSpeed;
     }
-    if (game.ballXPosition >= 370 && (game.ballYPosition >= game.player2Position - 25 && game.ballYPosition <= game.player2Position + 25)) {
+    if (game.ballXPosition >= 360 && (game.ballYPosition >= game.player2Position - 25 && game.ballYPosition <= game.player2Position + 25)) {
         ballXSpeed = -ballXSpeed;
     }
 }, ballUpdateMs);
