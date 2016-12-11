@@ -8,3 +8,6 @@ router.get("/", function (request, response)  {
     var gameState = {"gameID": gameID, "player1Position": 100, "player2Position": 50};
     response.send(gameState);
 });
+
+
+module.exports = router;
