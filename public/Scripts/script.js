@@ -43,7 +43,7 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
       ctx.fill();
       ctx.closePath();
   //console.log(ballX);
-  //console.log(ballY);
+  console.log(ballY);
 
 
 }
