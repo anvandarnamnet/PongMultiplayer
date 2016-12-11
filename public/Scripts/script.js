@@ -31,6 +31,7 @@ $(document).keydown(function(e) {
     function(data, textStatus, jqXHR)
     {
           //data: Received from server
+          console.log(data);
     })
 });
 
