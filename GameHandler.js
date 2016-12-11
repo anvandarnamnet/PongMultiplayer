@@ -1,10 +1,10 @@
 var game = {"player1Position": 100, "player2Position": 100, "ballXPosition": 50, "ballYPosition": 100};
 var exports = module.exports;
 const ballUpdateMs = 10;
-const moveSpeed = 10;
-const wallRight = 450;
+const moveSpeed = 5;
+const wallRight = 390;
 const wallLeft = 10;
-const wallUp = 320;
+const wallUp = 290;
 const wallDown = 10;
 
 var ballXSpeed = 1;
