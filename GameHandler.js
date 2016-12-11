@@ -2,10 +2,10 @@ var game = {"player1Position": 100, "player2Position": 100, "ballXPosition": 50,
 var exports = module.exports;
 const ballUpdateMs = 10;
 const moveSpeed = 20;
-const wallRight = 390;
-const wallLeft = 10;
-const wallUp = 290;
-const wallDown = 10;
+const wallRight = 400;
+const wallLeft = 0;
+const wallUp = 300;
+const wallDown = 0;
 
 var ballXSpeed = 1;
 var ballYSpeed = 1;
@@ -32,16 +32,16 @@ exports.updatePlayers = function(player1Input, player2Input) {
 setInterval(function() {
     game.ballXPosition += ballXSpeed;
     game.ballYPosition -= ballYSpeed;
-    if (game.ballXPosition >= wallRight) {
+    if (game.ballXPosition >= wallRight - 5) {
         ballXSpeed = -ballXSpeed;
     }
-    if (game.ballXPosition <= wallLeft) {
+    if (game.ballXPosition <= wallLeft + 5) {
         ballXSpeed = -ballXSpeed;
     }
-    if (game.ballYPosition >= wallUp) {
+    if (game.ballYPosition >= wallUp - 5) {
         ballYSpeed = -ballYSpeed;
     }
-    if (game.ballYPosition <= wallDown) {
+    if (game.ballYPosition <= wallDown + 5) {
         ballYSpeed = -ballYSpeed;
     }
     if (game.ballXPosition <= 40 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25) && ballXSpeed == -1) {
