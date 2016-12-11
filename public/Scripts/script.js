@@ -3,12 +3,13 @@ $(function() {
   var right = $(".right");
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
-
-  $.getJSON("http://localhost:5000/api?gameID=123", function(data){
-
-    right.append(data.player2Position);
-    paintPlayers(ctx, data.player1Position);
-  });
+  //setInterval(updateData(ctx), 1000);
+  setInterval(function(){
+    $.getJSON("http://localhost:5000/api?gameID=123", function(data){
+      //console.log("HEJ");
+      paintPlayers(ctx, data.player1Position);
+    });
+  },100)
 });
 
 function paintPlayers(ctx, yPos1){
@@ -34,6 +35,8 @@ $(document).keydown(function(e) {
           console.log(data);
     })
 });
+
+
 
 
 // Read a page's GET URL variables and return them as an associative array.

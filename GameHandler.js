@@ -9,6 +9,7 @@ exports.getGameState = function() {
 exports.updateGame = function(player1Input, player2Input) {
     if (player1Input == 40) {
         game.player1Position -= moveSpeed;
+        console.log(game.player1Position);
     }
     if (player1Input == 38) {
         game.player1Position += moveSpeed;
