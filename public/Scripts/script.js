@@ -31,10 +31,10 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX){
 
 
   ctx.beginPath();
-  ctx.rect(ballX, 50, 50, 100);
-  ctx.fillStyle = "#bb6969";
-  ctx.fill();
-  ctx.closePath();
+    ctx.arc(ballX, 100, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
   console.log(ballX);
 
 
