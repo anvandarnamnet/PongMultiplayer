@@ -8,14 +8,25 @@ $(function() {
     $.getJSON("http://localhost:5000/api?gameID=123", function(data){
       //console.log("HEJ");
       //console.log(data);
-      paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition);
+      paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition, data.ballYPosition);
     });
   },100)
 });
 
-function paintPlayers(ctx,canvas, yPos1, yPos2, ballX){
+function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  ctx.beginPath();
+    ctx.arc(canvas.width, canvas.height, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+      ctx.arc(0, 0, 10, 0, Math.PI*2);
+      ctx.fillStyle = "#0095DD";
+      ctx.fill();
+      ctx.closePath();
 
   ctx.beginPath();
   ctx.rect(10, yPos1, 50, 100);
@@ -31,11 +42,12 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX){
 
 
   ctx.beginPath();
-    ctx.arc(ballX, 100, 10, 0, Math.PI*2);
+    ctx.arc(ballX, ballY, 10, 0, Math.PI*2);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
   console.log(ballX);
+  console.log(ballY);
 
 
 }
