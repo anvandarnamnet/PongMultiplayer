@@ -6,8 +6,7 @@ var gameHandler = require(__dirname + "/GameHandler");
 
 router.get("/", function (request, response)  {
     var gameID = request.query.gameID;
-    var gameState = {"gameID": gameID, "player1Position": 100, "player2Position": 50};
-  //  console.log("GET");
+    var gameState = gameHandler.getGameState();
     response.send(gameState);
 });
 
