@@ -44,10 +44,10 @@ setInterval(function() {
     if (game.ballYPosition <= wallDown) {
         ballYSpeed = -ballYSpeed;
     }
-    if (game.ballXPosition <= 40 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25)) {
+    if (game.ballXPosition <= 40 && (game.ballYPosition >= game.player1Position - 25 && game.ballYPosition <= game.player1Position + 25) && ballXSpeed == -1) {
         ballXSpeed = -ballXSpeed;
     }
-    if (game.ballXPosition >= 360 && (game.ballYPosition >= game.player2Position - 25 && game.ballYPosition <= game.player2Position + 25)) {
+    if (game.ballXPosition >= 360 && (game.ballYPosition >= game.player2Position - 25 && game.ballYPosition <= game.player2Position + 25) && ballXSpeed == 1) {
         ballXSpeed = -ballXSpeed;
     }
 }, ballUpdateMs);
