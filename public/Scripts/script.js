@@ -42,6 +42,18 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
       ctx.fillStyle = "#ff0000";
       ctx.fill();
       ctx.closePath();
+
+      ctx.beginPath();
+        ctx.arc(10, yPos1, 2, 0, Math.PI*2);
+        ctx.fillStyle = "#ff0000";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+          ctx.arc(canvas.width - 30, yPos2, 2, 0, Math.PI*2);
+          ctx.fillStyle = "#ff0000";
+          ctx.fill();
+          ctx.closePath();
   //console.log(ballX);
   console.log(ballY);
 
