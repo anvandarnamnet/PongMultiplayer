@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var router = require(__dirname + "/Router");
-var schema = require(__dirname + '/Schema');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
