@@ -46,8 +46,8 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
-  console.log(ballX);
-  console.log(ballY);
+  //console.log(ballX);
+  //console.log(ballY);
 
 
 }
@@ -57,8 +57,16 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
 $(document).keydown(function(e) {
     console.log(e.keyCode);
     //request with URL,data,success callback
+    var player1Input = 0;
+    var player2Input = 0;
+    var player = getUrlVars()["player"];
+    if(player == 1){
+      player1Input = e.keyCode;
+    }else{
+      player2Input = e.keyCode;
+    }
     $.post("http://localhost:5000/api",
-    {player1Input:0,player2Input:e.keyCode},
+    {player1Input:player1Input,player2Input:player2Input},
     function(data, textStatus, jqXHR)
     {
           //data: Received from server
