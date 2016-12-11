@@ -15,7 +15,6 @@ router.post("/", function (request, response) {
     var player1Input = request.body.player1Input;
     var player2Input = request.body.player2Input;
     gameHandler.updateGame(player1Input, player2Input);
-    console.log("hej");
     response.send("200");
 });
 
