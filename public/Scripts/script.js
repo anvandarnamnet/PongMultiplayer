@@ -10,7 +10,7 @@ $(function() {
       //console.log(data);
       paintPlayers(ctx,canvas, data.player1Position, data.player2Position, data.ballXPosition, data.ballYPosition);
     });
-  },100)
+  },10)
 });
 
 function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
