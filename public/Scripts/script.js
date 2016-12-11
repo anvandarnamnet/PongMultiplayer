@@ -16,20 +16,22 @@ $(function() {
 function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // Var är kanterna?
   ctx.beginPath();
     ctx.arc(canvas.width, canvas.height, 10, 0, Math.PI*2);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
-
+    // var är kanterna
     ctx.beginPath();
       ctx.arc(0, 0, 10, 0, Math.PI*2);
       ctx.fillStyle = "#0095DD";
       ctx.fill();
       ctx.closePath();
 
+
   ctx.beginPath();
-  ctx.rect(10, yPos1, 50, 100);
+  ctx.rect(10, yPos1, 20, 50);
   ctx.fillStyle = "#FF0000";
   ctx.fill();
   ctx.closePath();
