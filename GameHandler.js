@@ -29,14 +29,21 @@ exports.updatePlayers = function(player1Input, player2Input) {
     }
 }
 
+function reset() {
+    game.player1Position = 100;
+    game.player2Position = 100;
+    game.ballXPosition = 200;
+    game.ballYPosition = 150;
+}
+
 setInterval(function() {
     game.ballXPosition += ballXSpeed;
     game.ballYPosition -= ballYSpeed;
     if (game.ballXPosition >= wallRight - 10) {
-        ballXSpeed = -ballXSpeed;
+        reset();
     }
     if (game.ballXPosition <= wallLeft + 10) {
-        ballXSpeed = -ballXSpeed;
+        reset();
     }
     if (game.ballYPosition <= wallUp + 10) {
         ballYSpeed = -ballYSpeed;

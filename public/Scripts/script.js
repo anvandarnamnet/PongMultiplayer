@@ -36,34 +36,12 @@ function paintPlayers(ctx,canvas, yPos1, yPos2, ballX,ballY){
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
-
-    ctx.beginPath();
-      ctx.arc(ballX, ballY, 2, 0, Math.PI*2);
-      ctx.fillStyle = "#ff0000";
-      ctx.fill();
-      ctx.closePath();
-
-      ctx.beginPath();
-        ctx.arc(10, yPos1, 2, 0, Math.PI*2);
-        ctx.fillStyle = "#ff0000";
-        ctx.fill();
-        ctx.closePath();
-
-        ctx.beginPath();
-          ctx.arc(canvas.width - 30, yPos2, 2, 0, Math.PI*2);
-          ctx.fillStyle = "#ff0000";
-          ctx.fill();
-          ctx.closePath();
-  //console.log(ballX);
-  console.log(ballY);
-
-
 }
 
 
 
 $(document).keydown(function(e) {
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
     //request with URL,data,success callback
     var player1Input = 0;
     var player2Input = 0;
