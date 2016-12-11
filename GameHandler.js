@@ -1,6 +1,6 @@
 var game = {"player1Position": 100, "player2Position": 100, "ballXPosition": 50, "ballYPosition": 100};
 var exports = module.exports;
-const ballUpdatems = 100;
+const ballUpdateMs = 1000;
 const ballXSpeed = 5;
 const ballYSpeed = 5;
 const moveSpeed = 10;
@@ -26,4 +26,4 @@ exports.updatePlayers = function(player1Input, player2Input) {
 
 setInterval(function() {
      game.ballXPosition += ballXSpeed;
-}, ballUpdatems);
+}, ballUpdateMs);
